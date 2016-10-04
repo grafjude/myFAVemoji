@@ -12,6 +12,8 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var cooltableView: UITableView!
     
+    var emoji=["🎹 Piano","🌞 Sun","👾 Pixie","😈 Purple Devil","👻 Ghost","😄 Favortie Smile","♍️ Virgo sign"] 
+    
     override func viewDidLoad() {
         
         super.viewDidLoad()
@@ -22,17 +24,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //and contents
     }
     
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 100
+        return emoji.count
            //this tells xcode to look for the number of rows as an integer
    
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
+        print(indexPath.row)
+        
         let cell=UITableViewCell()
-        cell.textLabel?.text="😈"
+        cell.textLabel?.text=emoji[indexPath.row]
         return cell
         //this tells xcode what we want in the cells in order
     }
