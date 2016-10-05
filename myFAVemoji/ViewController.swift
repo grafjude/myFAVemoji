@@ -42,7 +42,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         //this tells xcode what we want in the cells in order
     }
  
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "moveSegue", sender: "🎹")
+    }
     
     override func didReceiveMemoryWarning() {
         
